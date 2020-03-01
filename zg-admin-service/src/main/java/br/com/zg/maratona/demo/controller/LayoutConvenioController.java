@@ -15,12 +15,12 @@ public class LayoutConvenioController {
     private LayoutConvenioRepository layoutConvenioRepository;
 
     @GetMapping(name = "/", produces = "application/json")
-    public List<LayoutConvenio> getCustomer() {
+    public List<LayoutConvenio> getLayoutsConvenios() {
         return layoutConvenioRepository.findAll();
     }
 
     @PutMapping(name = "/", produces = "application/json")
-    public LayoutConvenio getCustomerByName(@RequestBody() LayoutConvenio layoutConvenio) {
+    public LayoutConvenio saveLayoutConvenio(@RequestBody() LayoutConvenio layoutConvenio) {
         return layoutConvenioRepository.save(layoutConvenio);
     }
 
