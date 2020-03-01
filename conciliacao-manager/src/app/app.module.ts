@@ -3,7 +3,6 @@ import {LOCALE_ID, NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MegaMenuModule} from 'primeng/megamenu';
 import {MenubarModule} from 'primeng/menubar';
@@ -17,16 +16,17 @@ import { CardTitleComponent } from './shared/card-title/card-title.component';
 import localePt from '@angular/common/locales/pt';
 import {registerLocaleData} from '@angular/common';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { ResumoQuitacaoComponent } from './resumo-quitacao/resumo-quitacao.component';
 
 registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     CardContainerComponent,
     InputTypeaheadComponent,
     CardTitleComponent,
+    ResumoQuitacaoComponent,
   ],
   imports: [
     BrowserModule,
