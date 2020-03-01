@@ -1,0 +1,33 @@
+{
+    "conexoes": [
+        {
+            "origem": "EXTRATOR",
+            "host": "localhost",
+            "database": "ZGextrator",
+            "port": "5432",
+            "user": "postgres",
+            "pwd": "admin"
+        },
+        {
+            "origem": "ERP",
+            "host": "servidor-maratona.zeroglosa.com.br",
+            "database": "time12",
+            "port": "5432",
+            "user": "time12",
+            "pwd": "3Uafk57UC3cSFRGh"
+        },
+        {
+            "origem": "CORE",
+            "host": "localhost",
+            "database": "ZGcore",
+            "port": "5432",
+            "user": "postgres",
+            "pwd": "admin"
+        }
+    ],    
+    "url": [
+        "https://glosamax.zeroglosa.com.br/glosamax/arquivo/index",
+        "https://glosamin.zeroglosa.com.br/glosamin/arquivo/index",
+        "https://pagatudo.zeroglosa.com.br/pagatudo/arquivo/index"
+    ]
+}
