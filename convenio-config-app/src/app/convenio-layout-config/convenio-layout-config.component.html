@@ -13,6 +13,7 @@
                <label>Convenio</label>
                <ng-select [items]="listConvenio"
                           bindLabel="name"
+                          bindValue="id"
                           placeholder="Selecione o convenio"
                           formControlName="convenio">
                </ng-select>
@@ -31,11 +32,7 @@
        <div class="row mt-5" *ngIf="isIntegracaoCSV()">
            <div class="col-6">
                <label>Delimitador coluna</label>
-               <input class="form-control" >
-           </div>
-           <div class="col-6">
-               <label>Delimitador quebra linhas</label>
-               <input class="form-control" >
+               <input class="form-control" [(ngModel)]="delimitador"  [ngModelOptions]="{standalone: true}">
            </div>
        </div>
 
@@ -46,23 +43,23 @@
                <ul class="list-group">
                    <li class="list-group-item" *ngFor="let campo of listCampos" >
                         <div class="row">
-                           <div class="col-4" [innerHtml]="campo">
+                           <div class="col-4" [innerHtml]="campo.chave">
                            </div>
                             <div class="col-4" *ngIf="isIntegracaoTxt()">
                                 <label>Posição Inicial</label>
-                                <input class="form-control" (keypress)="numberOnly($event)">
+                                <input class="form-control" [(ngModel)]="campo.posicao_inicial"   [ngModelOptions]="{standalone: true}"(keypress)="numberOnly($event)">
                             </div>
                             <div class="col-4" *ngIf="isIntegracaoTxt()">
                                 <label>Posição Final</label>
-                                <input class="form-control" (keypress)="numberOnly($event)">
+                                <input class="form-control" [(ngModel)]="campo.posicao_final"   [ngModelOptions]="{standalone: true}" (keypress)="numberOnly($event)">
                             </div>
                             <div class="col-8 text-center" *ngIf="isIntegracaoHtml() || isIntegracaoXml()">
                                 <label>Seletor(CSS)</label>
-                                <input class="form-control" >
+                                <input class="form-control"  [(ngModel)]="campo.tag_seletor"  [ngModelOptions]="{standalone: true}" >
                             </div>
                             <div class="col-8 text-center" *ngIf="isIntegracaoCSV()">
                                 <label>Indice Coluna</label>
-                                <input class="form-control" >
+                                <input class="form-control"  [(ngModel)]="campo.indice"  [ngModelOptions]="{standalone: true}" >
                             </div>
                         </div>
 
@@ -73,7 +70,7 @@
 
         <div class="row mt-3">
            <div class="col-12">
-               <button type="submit" class="btn btn-success btn-block" >Gravar</button>
+               <button type="submit" class="btn btn-success btn-block" (click)="gravar()" >Gravar</button>
            </div>
         </div>
     </app-card-container>

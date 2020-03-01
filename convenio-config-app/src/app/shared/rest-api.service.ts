@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
-import {retry, catchError} from 'rxjs/operators';
+import {catchError} from 'rxjs/operators';
 import {environment} from '../../environments/environment';
 
 @Injectable({
@@ -39,6 +39,12 @@ export class RestApiService {
       );
   }
 
+  put<T>(path, obj?: any): Observable<T> {
+      return this.http.put<T>(this.getUrl(path), obj,  this.httpOptions)
+          .pipe(
+              catchError(this.handleError)
+          );
+  }
   getUrl(path) {
     return this.apiURL + '/' + path;
   }

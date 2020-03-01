@@ -1,7 +1,6 @@
 <app-card-container>
 
   <app-card-title>
-    <img *ngIf="model == null" src="/assets/icons/icone-pedidos.png" height="20">
     Configurações Layout
   </app-card-title>
   <div class="row container">
@@ -10,9 +9,19 @@
       <tr>
         <th scope="col" class="font-weight-normal">#</th>
         <th scope="col" class="font-weight-normal">Convenio</th>
+        <th scope="col" class="font-weight-normal">Formato</th>
+        <th scope="col" class="font-weight-normal">Campo</th>
       </tr>
       </thead>
       <tbody>
+      <tr *ngFor="let convenioConfig of listConvenioConfig; index as i">
+        <th scope="row" [innerHtml]="i"></th>
+        <td [innerHtml]="convenioConfig.id_convenio">
+
+        </td>
+        <td [innerHtml]="convenioConfig.extensao"></td>
+        <td [innerHtml]="convenioConfig.chave"></td>
+      </tr>
       </tbody>
     </table>
     <!--<div class="d-flex justify-content-between p-2">-->
