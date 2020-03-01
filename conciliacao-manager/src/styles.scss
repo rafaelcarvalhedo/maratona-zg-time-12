@@ -1,0 +1,15 @@
+@import "~@ng-select/ng-select/themes/default.theme.css";
+/* You can add global styles to this file, and also import other style files */
+body{
+  background-color: #f1f1f1;
+  font-family: EuclidCircularB;
+}
+$light-gray : rgba(149, 150, 149, 0.8);
+$dark_gray : #999999;
+.dark-color {
+  color: $dark_gray;
+}
+.light-gray{
+  color: $light-gray;
+}
+

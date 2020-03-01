@@ -1,0 +1,8 @@
+<ng-template #rt let-r="result" let-t="term">
+  <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+</ng-template>
+<input #instance id="typeahead-basic" [placeholder]="placeholder" type="text" (blur)="onBlur($event)" (selectItem)="onSelectItem($event)" class="form-control mt-2" [ngbTypeahead]="search" [(ngModel)]="model"  [resultTemplate]="rt" [inputFormatter]="formatter" />
+<div class="bt-container">
+  <img *ngIf="model == null"  src="/assets/icons/icone-pesquisa.png" height="20">
+  <img *ngIf="model != null" src="/assets/icons/icone-apagar.png" (click)="clearValue()"  height="20">
+</div>
