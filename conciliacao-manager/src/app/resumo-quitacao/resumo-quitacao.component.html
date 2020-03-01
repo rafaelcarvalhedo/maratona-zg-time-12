@@ -1,0 +1,36 @@
+<app-card-container>
+    <app-card-title>
+        Resumo Quitação
+    </app-card-title>
+    <div class="row container">
+        <table class="table table-striped mt-2">
+            <thead>
+            <tr>
+                <th scope="col" class="font-weight-normal">#</th>
+                <th scope="col" class="font-weight-normal">Data Conciliação</th>
+                <th scope="col" class="font-weight-normal">Data Faturamento</th>
+                <th scope="col" class="font-weight-normal">Prestador</th>
+                <th scope="col" class="font-weight-normal">Descrição Produto</th>
+                <th scope="col" class="font-weight-normal">Id Produto</th>
+                <th scope="col" class="font-weight-normal">Valor Guia</th>
+                <th scope="col" class="font-weight-normal">Valor Pago</th>
+                <th scope="col" class="font-weight-normal">Valor Glosa</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let resumo of listaResumoQuitacao; index as i">
+                <th scope="row" [innerHtml]="i"></th>
+                <td [innerHtml]="resumo.id_convenio"></td>
+                <td [innerHtml]="resumo.data_conciliacao"></td>
+                <td [innerHtml]="resumo.data_faturamento"></td>
+                <td [innerHtml]="resumo.id_prestador"></td>
+                <td [innerHtml]="resumo.desc_produto"></td>
+                <td [innerHtml]="resumo.id_produto"></td>
+                <td [innerHtml]="resumo.valor_guia"></td>
+                <td [innerHtml]="resumo.valor_pago"></td>
+                <td [innerHtml]="resumo.valor_glosa"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</app-card-container>
