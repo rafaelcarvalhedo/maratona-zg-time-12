@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {ConvenioLayoutCampos} from './model/convenio-layout-campos';
+import {LayoutConvenioModel} from '../shared/model/layout-convenio.model';
 
 @Component({
   selector: 'app-convenio-layout-config',
@@ -10,7 +11,7 @@ import {ConvenioLayoutCampos} from './model/convenio-layout-campos';
 export class ConvenioLayoutConfigComponent implements OnInit {
 
   layoutConfigForm : FormGroup;
-  listConvenio;
+  listConvenio ;
   formatosIntegracao = [
       'TXT',
       'HTML',

@@ -21,7 +21,7 @@ export class RestApiService {
   };
 
   get<T>(path: string, params?: any): Observable<T> {
-    return this.http.get<T>(this.getUrl(path), {headers : this.htt∑pOptions.headers, params})
+    return this.http.get<T>(this.getUrl(path), {headers : this.httpOptions.headers, params})
       .pipe(
         catchError(this.handleError)
       );
