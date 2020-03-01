@@ -1,0 +1,82 @@
+
+<form [formGroup]="layoutConfigForm" (ngSubmit)="submit()">
+
+
+    <app-card-container>
+
+        <app-card-title>
+            Configuração Layout Convenio
+        </app-card-title>
+
+        <div class="row mt-4">
+           <div class="col-6">
+               <label>Convenio</label>
+               <ng-select [items]="listConvenio"
+                          bindLabel="name"
+                          placeholder="Selecione o convenio"
+                          formControlName="convenio">
+               </ng-select>
+           </div>
+
+            <div class="col-6">
+                <label>Formato integração</label>
+                <ng-select [items]="formatosIntegracao"
+                           placeholder="Selecione o formato"
+                           formControlName="formatoIntegracao">
+                </ng-select>
+            </div>
+
+        </div>
+
+       <div class="row mt-5" *ngIf="isIntegracaoCSV()">
+           <div class="col-6">
+               <label>Delimitador coluna</label>
+               <input class="form-control" >
+           </div>
+           <div class="col-6">
+               <label>Delimitador quebra linhas</label>
+               <input class="form-control" >
+           </div>
+       </div>
+
+
+       <div class="row mt-2">
+           <div class="col-12">
+               <label>Campos</label>
+               <ul class="list-group">
+                   <li class="list-group-item" *ngFor="let campo of listCampos" >
+                        <div class="row">
+                           <div class="col-4" [innerHtml]="campo">
+                           </div>
+                            <div class="col-4" *ngIf="isIntegracaoTxt()">
+                                <label>Posição Inicial</label>
+                                <input class="form-control" (keypress)="numberOnly($event)">
+                            </div>
+                            <div class="col-4" *ngIf="isIntegracaoTxt()">
+                                <label>Posição Final</label>
+                                <input class="form-control" (keypress)="numberOnly($event)">
+                            </div>
+                            <div class="col-8 text-center" *ngIf="isIntegracaoHtml() || isIntegracaoXml()">
+                                <label>Seletor(CSS)</label>
+                                <input class="form-control" >
+                            </div>
+                            <div class="col-8 text-center" *ngIf="isIntegracaoCSV()">
+                                <label>Indice Coluna</label>
+                                <input class="form-control" >
+                            </div>
+                        </div>
+
+                   </li>
+               </ul>
+           </div>
+       </div>
+
+        <div class="row mt-3">
+           <div class="col-12">
+               <button type="submit" class="btn btn-success btn-block" >Gravar</button>
+           </div>
+        </div>
+    </app-card-container>
+
+</form>
+

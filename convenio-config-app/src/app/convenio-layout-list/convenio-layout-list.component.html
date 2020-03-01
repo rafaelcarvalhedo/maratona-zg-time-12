@@ -1,0 +1,23 @@
+<app-card-container>
+
+  <app-card-title>
+    <img *ngIf="model == null" src="/assets/icons/icone-pedidos.png" height="20">
+    Configurações Layout
+  </app-card-title>
+  <div class="row container">
+    <table class="table table-striped mt-2">
+      <thead>
+      <tr>
+        <th scope="col" class="font-weight-normal">#</th>
+        <th scope="col" class="font-weight-normal">Convenio</th>
+      </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <!--<div class="d-flex justify-content-between p-2">-->
+        <!--<ngb-pagination [collectionSize]="listOrder.totalElements" [pageSize]="listOrder.size" [maxSize]="listOrder.totalPages -1" (pageChange)="changePage($event)" aria-label="Default pagination"></ngb-pagination>-->
+    <!--</div>-->
+
+  </div>
+</app-card-container>

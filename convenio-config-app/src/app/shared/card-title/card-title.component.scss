@@ -1,0 +1,17 @@
+:host{
+  font-family: EuclidCircularB;
+
+
+  .card-title-container {
+    font-size: 1rem * 1.25;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+
+    img {
+      padding-right: 10px;
+    }
+
+  }
+
+}
